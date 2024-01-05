@@ -20,27 +20,8 @@ use("b2_3pm");
 
 // ? find movies whose rating average is not 9
 
-// ?find movies whose genre includes Action and Crime
-// !db.movies.find({genres:"Action",genres:"Crime"},{name:1,genres:1})
-// db.movies.find({$and:[{genres:"Action"},{genres:"Crime"}]})
-
-// db.movies.find({genres:{$all:["Action","Crime"]}})
-
-// ! find movies whose genre size is 2
-// db.movies.find({genres:{$size:2}})
-
-// ? find movies whose language is not English
-// db.movies.find({language:{$ne:"English"}})
-
-// ! find movies whose summary includes "Pacific"
-// db.movies.find({summary:{$regex:"Pacific",$options:"i"}},{name:1, summary:1})
-
 // ? find movies whose rating average is either 6 or 6.5 or
 // ?9 or 8 or 8.5 or 8.6 or 7.7 or 6.1 or 7.8
-
-// db.movies.find({$or:[{"rating.average":6},{"rating.average":6.5},{"rating.average":9},{"rating.average":8},{"rating.average":8.5},{"rating.average":8.6},{"rating.average":7.7},{"rating.average":6.1},{"rating.average":7.8}]}).count()
-
-// db.movies.find({"rating.average":{$in:[6,6.5,9,8,8.5,8.6,7.7,6.1,7.8]}}).count()
 
 // ?find students whose hobby is both Gaming and Singing
 
@@ -70,3 +51,17 @@ use("b2_3pm");
 
 // ? find students whose primary id is "656070d2b16daaa31169a51b"
 // db.students.find({ _id: ObjectId("656070d2b16daaa31169a51b") });
+// ?find movies whose genre includes Action and Crime
+// !db.movies.find({genres:"Action",genres:"Crime"},{name:1,genres:1})
+// db.movies.find({$and:[{genres:"Action"},{genres:"Crime"}]})
+
+// db.movies.find({genres:{$all:["Action","Crime"]}})
+
+// ! find movies whose genre size is 2
+// db.movies.find({genres:{$size:2}})
+
+// ? find movies whose language is not English
+// db.movies.find({language:{$ne:"English"}})
+
+// ! find movies whose summary includes "Pacific"
+// db.movies.find({summary:{$regex:"Pacific",$options:"i"}},{name:1, summary:1})

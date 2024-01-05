@@ -9,8 +9,6 @@ use("football_imdb");
 //? returns number of matching documents
 // db.movies.find().count();
 
-db.movies.find();
-
 // operator
 // comparison operator
 // ?$eq,$gt, $gte, $lt, $lte, $ne, $in, $nin
@@ -43,3 +41,70 @@ db.movies.find();
 
 // genres must be array and should have "Drama" only
 // db.movies.find({ genres: ["Drama"] }, { name: 1, genres: 1 });
+
+// ? logical operators
+// ? $and , $or, $not , $nor
+
+// ? $and
+// {language:"English"}
+// {rating.average :6.5}
+
+// db.movies.find({
+//   $and: [{ language: "English" }, { "rating.average": 6.5 }],
+// });
+
+// equivalent code
+// db.movies.find({ language: "English", "rating.average": 7 });
+
+// ? $or
+
+// db.movies.find({ $or: [{ name: "Graceland" }, { "rating.average": 8 }] });
+
+// db.movies.find({ $or: [{ "rating.average": 7 }, { "rating.average": 9 }] });
+
+// ? $in
+// db.movies.find({ "rating.average": { $in: [7, 9, 8, 6.5, 6.6] } });
+
+//? $not
+// db.movies.find({ "rating.average": { $not: { $eq: 7 } } });
+// rating.average !== 9
+// db.movies.find(
+//   { "rating.average": { $ne: 9 } },
+//   {
+//     name: 1,
+//     rating: 1,
+//   }
+// );
+
+// ? $nor
+// db.movies.find(
+//   { $nor: [{ language: "English" }, { "rating.average": 9 }] },
+//   {
+//     language: 1,
+//     rating: 1,
+//     name: 1,
+//   }
+// );
+
+// db.movies.find(
+//   {
+//     $nor: [
+//       { "rating.average": 9 },
+//       { "rating.average": 7 },
+//       { "rating.average": 6 },
+//     ],
+//   },
+//   {
+//     name: 1,
+//     rating: 1,
+//   }
+// );
+
+// ? $nin
+// db.movies.find(
+//   { "rating.average": { $nin: [9, 7, 6, 6.5, 7.6] } },
+//   {
+//     name: 1,
+//     rating: 1,
+//   }
+// );
