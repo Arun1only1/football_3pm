@@ -73,4 +73,34 @@ use("football_imdb");
 //     },
 //   }
 // );
+
+// db.students.updateOne(
+//   { name: "Dilip" },
+//   {
+//     $set: {
+//       name: "Nischal",
+//       phoneNumber: "4414084",
+//     },
+//   }
+// );
+
+// ? $rename => renames the field
+// db.students.updateMany(
+//   {},
+//   {
+//     $rename: {
+//       phoneNumber: "contactNumber",
+//     },
+//   }
+// );
+
+// ?$unset => removes specified field
+db.students.updateMany(
+  {},
+  {
+    $unset: {
+      isMarried: "",
+    },
+  }
+);
 db.students.find();
