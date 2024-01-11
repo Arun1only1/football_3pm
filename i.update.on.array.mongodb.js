@@ -180,15 +180,15 @@ use("football_imdb");
 //   }
 // );
 
-db.students.updateOne(
-  { name: "Unique" },
-  {
-    $inc: {
-      "scores.$[item].point": 10,
-    },
-  },
-  {
-    arrayFilters: [{ "item.point": { $lt: 60 } }],
-  }
-);
-db.students.find();
+// db.students.updateOne(
+//   { name: "Unique" },
+//   {
+//     $inc: {
+//       "scores.$[item].point": 10,
+//     },
+//   },
+//   {
+//     arrayFilters: [{ "item.point": { $lt: 60 } }],
+//   }
+// );
+// db.students.find();
