@@ -93,26 +93,30 @@ use("badminton_lookup");
 
 // db.vehicle.find();
 
-db.vehicle.aggregate([
-  { $match: {} },
-  {
-    $lookup: {
-      from: "owners",
-      localField: "ownerId",
-      foreignField: "_id",
-      as: "ownerDetail",
-    },
-  },
-  {
-    $project: {
-      vehicle: {
-        company: "$brand",
-        variant: "$variant",
-      },
-      owner: {
-        name: { $first: "$ownerDetail.name" },
-        email: { $first: "$ownerDetail.email" },
-      },
-    },
-  },
-]);
+// db.vehicle.aggregate([
+//   { $match: {} },
+//   {
+//     $lookup: {
+//       from: "owners",
+//       localField: "ownerId",
+//       foreignField: "_id",
+//       as: "ownerDetail",
+//     },
+//   },
+//   {
+//     $project: {
+//       vehicle: {
+//         company: "$brand",
+//         variant: "$variant",
+//       },
+//       owner: {
+//         name: { $first: "$ownerDetail.name" },
+//         email: { $first: "$ownerDetail.email" },
+//       },
+//     },
+//   },
+// ]);
+
+// ? index=> performance
+// ? co-ordinate
+// ? $group

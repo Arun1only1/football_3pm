@@ -4,6 +4,7 @@ use("football_imdb");
 // ? stages
 // ?$match => filter
 // ?$unwind
+// ?$sort
 // ?$lookup
 // ?$limit => number of documents
 // ?$skip
