@@ -48,3 +48,20 @@ use("football_imdb");
 //     },
 //   },
 // ]);
+
+// db.brothers.insertMany([
+//   { name: "Abhishek", age: 82 },
+//   { name: "Abhishek", age: 50 },
+// ]);
+
+// db.brothers.aggregate([
+//   {
+//     $match: {},
+//   },
+//   {
+//     $sort: {
+//       name: 1,
+//       age: 1,
+//     },
+//   },
+// ]);
